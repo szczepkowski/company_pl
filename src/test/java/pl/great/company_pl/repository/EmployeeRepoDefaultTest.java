@@ -44,6 +44,16 @@ class EmployeeRepoDefaultTest {
     }
 
     @Test
+    void create2() {
+
+        assertEquals(employee.getPesel(), PESEL_TEST);
+        assertEquals(employee.getFirstName(), FIRST_NAME_TEST);
+        assertEquals(employee.getLastName(), LAST_NAME_TEST);
+        assertEquals(employee.getSalary(), SALARY_TEST);
+    }
+
+
+    @Test
     void create2SamePesel() {
         assertThrows(Exception.class, () -> this.employeeRepo.create(FIRST_NAME_TEST, LAST_NAME_TEST, PESEL_TEST, SALARY_TEST));
 
